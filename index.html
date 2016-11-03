@@ -1,1 +1,19 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><link rel="shortcut icon" href="/backdrop-filter-blur/favicon.ico"><title>React App</title><link href="/backdrop-filter-blur/static/css/main.bed51033.css" rel="stylesheet"></head><body><div id="root"></div><script>function onYouTubePlayerAPIReady(){player=new YT.Player("ytplayer",{playerVars:{autoplay:1,controls:0},height:"100%",width:"100%",videoId:"Hm3JodBR-vs"})}var tag=document.createElement("script");tag.src="https://www.youtube.com/player_api";var firstScriptTag=document.getElementsByTagName("script")[0];firstScriptTag.parentNode.insertBefore(tag,firstScriptTag);var player</script><script type="text/javascript" src="/backdrop-filter-blur/static/js/main.c02c416d.js"></script></body></html>
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><link rel="shortcut icon" href="/backdrop-filter-blur/favicon.ico"><title>React App</title><link href="/backdrop-filter-blur/static/css/main.6036b0bc.css" rel="stylesheet"></head><body><div id="root"></div><script>// Load the IFrame Player API code asynchronously.
+    var tag = document.createElement('script');
+    tag.src = "https://www.youtube.com/player_api";
+    var firstScriptTag = document.getElementsByTagName('script')[0];
+    firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+    Replace the 'ytplayer' element with an <iframe> and
+    YouTube player after the API code downloads.
+    var player;
+    if (!'ontouchstart' in window) {
+      function onYouTubePlayerAPIReady() {
+        player = new YT.Player('ytplayer', {
+          playerVars: { 'autoplay': 1, 'controls': 0 },
+          height: '100%',
+          width: '100%',
+          videoId: 'Hm3JodBR-vs'
+        });
+      }
+    }</script><script type="text/javascript" src="/backdrop-filter-blur/static/js/main.05720ab1.js"></script></body></html>
