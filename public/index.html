@@ -28,23 +28,25 @@
       To create a production bundle, use `npm run build`.
     -->
     <script>
-  // Load the IFrame Player API code asynchronously.
-  var tag = document.createElement('script');
-  tag.src = "https://www.youtube.com/player_api";
-  var firstScriptTag = document.getElementsByTagName('script')[0];
-  firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+    // Load the IFrame Player API code asynchronously.
+    var tag = document.createElement('script');
+    tag.src = "https://www.youtube.com/player_api";
+    var firstScriptTag = document.getElementsByTagName('script')[0];
+    firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
 
-  // Replace the 'ytplayer' element with an <iframe> and
-  // YouTube player after the API code downloads.
-  var player;
-  function onYouTubePlayerAPIReady() {
-    player = new YT.Player('ytplayer', {
-      playerVars: { 'autoplay': 1, 'controls': 0 },
-      height: '100%',
-      width: '100%',
-      videoId: 'Hm3JodBR-vs'
-    });
-  }
-</script>
+    Replace the 'ytplayer' element with an <iframe> and
+    YouTube player after the API code downloads.
+    var player;
+    if (!'ontouchstart' in window) {
+      function onYouTubePlayerAPIReady() {
+        player = new YT.Player('ytplayer', {
+          playerVars: { 'autoplay': 1, 'controls': 0 },
+          height: '100%',
+          width: '100%',
+          videoId: 'Hm3JodBR-vs'
+        });
+      }
+    }
+  </script>
   </body>
 </html>

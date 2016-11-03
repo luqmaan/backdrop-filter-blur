@@ -11,27 +11,6 @@ body {
   left: 0;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
-}
-
-.App-header {
-  background-color: #222;
-  height: 150px;
-  padding: 20px;
-  color: white;
-}
-
-.App-intro {
-  font-size: large;
-}
-
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
-}
-
 * {
   margin: 0;
 }
@@ -55,24 +34,9 @@ body {
   left: 0;
 }
 .ball-0 {
-  background: rgba(255, 255, 255, 0);
+  background: rgba(255, 255, 255, 0.5);
   background-position: center;
 
-}
-.ball-1 {
-  background-image: url(/0.jpg);
-}
-.ball-2 {
-  background-image: url(/0.jpg);
-}
-.ball-3 {
-  background-image: url(/0.jpg);
-}
-.ball-4 {
-  background-image: url(/0.jpg);
-}
-.ball-5 {
-  background-image: url(/0.jpg);
 }
 #ytplayer {
   height: 100%;

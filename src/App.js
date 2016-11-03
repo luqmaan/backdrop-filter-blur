@@ -9,16 +9,25 @@ class App extends Component {
   constructor(props) {
     super(props);
 
-    this.state = {x: 250, y: 300};
+    this.state = {x: 0, y: 0};
   }
 
   componentDidMount = () => {
     window.addEventListener('mousemove', this.handleMouseMove);
     window.addEventListener('touchmove', this.handleTouchMove);
+    window.addEventListener('deviceorientation', this.handleOrientation, true);
+    window.addEventListener('devicemotion', this.handleMotion, true);
   }
 
   handleMouseMove = ({pageX: x, pageY: y}) => {
     this.setState({x, y});
+  }
+
+  handleOrientation = ({beta, gamma}) => {
+    this.setState({
+      x: ((2 * gamma) / 180) * window.innerWidth,
+      y: ((2 * beta) / 90) * window.innerHeight,
+    })
   }
 
   handleTouchMove = ({touches}) => {
@@ -41,13 +50,14 @@ class App extends Component {
   render() {
     const xDistance = Math.max(Math.abs(this.state.x - (window.innerWidth / 2)), 120);
     const yDistance = Math.abs(this.state.y - (window.innerHeight / 2));
+    console.log(this.state.x, xDistance)
     return (
       <div>
         <div id="ytplayer"></div>
           <div className="App">
             <Motion
               defaultStyle={{
-                x: 12,
+                x: 0,
                 y: 0,
               }}
               style={{
