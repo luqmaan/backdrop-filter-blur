@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {StaggeredMotion, spring, presets} from 'react-motion';
+import {Motion, StaggeredMotion, spring, presets} from 'react-motion';
 import range from 'lodash/range';
 
 import logo from './logo.svg';
@@ -41,19 +41,25 @@ class App extends Component {
   render() {
     const {x, y} = this.state;
     const distance = Math.max(Math.hypot(x - (window.innerWidth / 2), y - (window.innerHeight / 2)), 120);
-    const blur = Math.max(distance / 10) - 12;
-    console.log(blur)
+    // const blur = Math.max(distance / 10) - 12;
     return (
       <div className="App">
-        <div
-          className={`demo1-ball ball-0`}
-          style={{
-            width: `${distance}px`,
-            height: `${distance}px`,
-            borderRadius: `${distance /  2}px`,
-            WebkitBackdropFilter: `blur(${blur}px)`,
-          }}
-        />
+        <Motion
+          defaultStyle={{x: 12}}
+          style={{x: spring(distance, presets.wobbly)}}
+        >
+          {({x}) => (
+            <div
+              className={`demo1-ball ball-0`}
+              style={{
+                width: `${x}px`,
+                height: `${x}px`,
+                borderRadius: `${x /  2}px`,
+                WebkitBackdropFilter: `blur(${ Math.max(x / 10) - 12}px)`,
+              }}
+            />
+          )}
+        </Motion>
       </div>
     );
   }
