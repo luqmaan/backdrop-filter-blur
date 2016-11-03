@@ -43,7 +43,6 @@ body {
 }
 .demo1-ball {
   border-radius: 99px;
-  background-color: white;
   width: 50px;
   height: 50px;
   position: fixed;
@@ -56,7 +55,7 @@ body {
   left: 0;
 }
 .ball-0 {
-  background: rgba(255, 255, 255, 0.7);
+  background: rgba(255, 255, 255, 0);
   background-position: center;
 
 }

@@ -39,28 +39,33 @@ class App extends Component {
   }
 
   render() {
-    const {x, y} = this.state;
-    const distance = Math.max(Math.hypot(x - (window.innerWidth / 2), y - (window.innerHeight / 2)), 120);
-    // const blur = Math.max(distance / 10) - 12;
+    const xDistance = Math.max(Math.abs(this.state.x - (window.innerWidth / 2)), 120);
+    const yDistance = Math.abs(this.state.y - (window.innerHeight / 2));
     return (
       <div>
         <div id="ytplayer"></div>
           <div className="App">
             <Motion
-              defaultStyle={{x: 12}}
-              style={{x: spring(distance, presets.wobbly)}}
+              defaultStyle={{
+                x: 12,
+                y: 0,
+              }}
+              style={{
+                x: spring(xDistance, presets.wobbly),
+                y: spring(yDistance, presets.wobbly),
+              }}
             >
-              {({x}) => (
+              {({x, y}) => (
                 <div
                   className={`demo1-ball ball-0`}
                   style={{
                     width: `${x}px`,
                     height: `${x}px`,
-                    borderRadius: `${x /  2}px`,
-                    WebkitBackdropFilter: `blur(${ Math.max(x / 10) - 12}px)`,
+                    borderRadius: `${x/2}px`,
+                    WebkitBackdropFilter: `blur(${y / 10}px)`,
                   }}
                 />
-              )}
+            )}
             </Motion>
           </div>
       </div>
