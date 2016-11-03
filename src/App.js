@@ -43,23 +43,26 @@ class App extends Component {
     const distance = Math.max(Math.hypot(x - (window.innerWidth / 2), y - (window.innerHeight / 2)), 120);
     // const blur = Math.max(distance / 10) - 12;
     return (
-      <div className="App">
-        <Motion
-          defaultStyle={{x: 12}}
-          style={{x: spring(distance, presets.wobbly)}}
-        >
-          {({x}) => (
-            <div
-              className={`demo1-ball ball-0`}
-              style={{
-                width: `${x}px`,
-                height: `${x}px`,
-                borderRadius: `${x /  2}px`,
-                WebkitBackdropFilter: `blur(${ Math.max(x / 10) - 12}px)`,
-              }}
-            />
-          )}
-        </Motion>
+      <div>
+        <div id="ytplayer"></div>
+          <div className="App">
+            <Motion
+              defaultStyle={{x: 12}}
+              style={{x: spring(distance, presets.wobbly)}}
+            >
+              {({x}) => (
+                <div
+                  className={`demo1-ball ball-0`}
+                  style={{
+                    width: `${x}px`,
+                    height: `${x}px`,
+                    borderRadius: `${x /  2}px`,
+                    WebkitBackdropFilter: `blur(${ Math.max(x / 10) - 12}px)`,
+                  }}
+                />
+              )}
+            </Motion>
+          </div>
       </div>
     );
   }

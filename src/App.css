@@ -3,6 +3,12 @@ body {
 }
 .App {
   text-align: center;
+  z-index: 100;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
 }
 
 .App-logo {
@@ -68,4 +74,12 @@ body {
 }
 .ball-5 {
   background-image: url(/0.jpg);
+}
+#ytplayer {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
 }
